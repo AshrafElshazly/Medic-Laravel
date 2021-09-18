@@ -6,7 +6,7 @@
 <div class="hero-slider">
     <!-- Slider Item -->
     @foreach ($slides as $slide)
-    <div class="slider-item slide1" style="background-image:url({{ asset('assets/web/images/slider/'.$slide->img) }})">
+    <div class="slider-item slide1" style="background-image:url({{ asset('uploads/web/slider/'.$slide->img) }})">
         <div class="container">
             <div class="row">
                 <div class="col-12">
