@@ -15,12 +15,13 @@ class CreateDoctorsTable extends Migration
     {
         Schema::create('doctors', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name', 50);
+            $table->string('name', 100);
             $table->string('img', 100);
             $table->string('about', 255);
             $table->foreignId('department_id')->references('id')->on('departments');
-            $table->boolean('is_top')->default(0);
-            $table->timestamps();
+            $table->boolean('active')->default(0);
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrentOnUpdate();
         });
     }
 

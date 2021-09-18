@@ -15,11 +15,12 @@ class CreateMessagesTable extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 50);
-            $table->string('email', 50);
-            $table->string('phone', 20);
+            $table->string('name', 100);
+            $table->string('email', 100);
+            $table->string('phone', 15);
             $table->text('message');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrentOnUpdate();
         });
     }
 

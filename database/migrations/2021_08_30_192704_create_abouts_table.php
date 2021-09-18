@@ -19,7 +19,9 @@ class CreateAboutsTable extends Migration
             $table->text('our_story');
             $table->text('mission');
             $table->text('vision');
-            $table->timestamps();
+            $table->boolean('active')->default(0);
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrentOnUpdate();
         });
     }
 

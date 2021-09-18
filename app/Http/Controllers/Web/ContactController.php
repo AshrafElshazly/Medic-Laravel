@@ -11,7 +11,7 @@ class ContactController extends Controller
 {
     public function index()
     {
-        $data['settings'] = Setting::first();
+        $data['settings'] = Setting::where('active','=',1)->first();
 
         return view('web.contact.index',$data);     
     }

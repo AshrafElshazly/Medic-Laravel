@@ -11,8 +11,8 @@ class ServicesController extends Controller
 {
     public function index()
     {
-        $data['settings'] = Setting::first();
-        $data['services'] = Service::get();
+        $data['settings'] = Setting::where('active','=',1)->first();
+        $data['services'] = Service::where('active','=',1)->get();
 
         return view('web.services.index',$data);     
     }

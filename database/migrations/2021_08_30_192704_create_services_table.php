@@ -16,10 +16,12 @@ class CreateServicesTable extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->increments('id');
             $table->string('img', 100);
-            $table->string('text', 255);
-            $table->string('name', 50);
+            $table->string('name', 100);
+            $table->string('title', 255);
             $table->text('description');
-            $table->timestamps();
+            $table->boolean('active')->default(0);
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrentOnUpdate();
         });
     }
 

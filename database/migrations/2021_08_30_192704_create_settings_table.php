@@ -15,17 +15,20 @@ class CreateSettingsTable extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('email', 50);
-            $table->string('phone', 20);
+            $table->string('welcome_txt', 255);
+            $table->string('email', 100);
+            $table->string('phone', 15);
             $table->string('location', 255);
             $table->text('map');
             $table->string('emegency_phone', 15);
-            $table->string('facebook', 255);
-            $table->string('twitter', 255);
-            $table->string('instagram', 255);
-            $table->string('pinterest', 255);
-            $table->string('github', 255);
-            $table->timestamps();
+            $table->text('facebook');
+            $table->text('twitter');
+            $table->text('instagram');
+            $table->text('pinterest');
+            $table->text('github');
+            $table->boolean('active')->default(0);
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrentOnUpdate();
         });
     }
 

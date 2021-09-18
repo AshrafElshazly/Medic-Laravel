@@ -11,8 +11,8 @@ class AboutController extends Controller
 {
     public function index()
     {
-        $data['settings'] = Setting::first();
-        $data['abouts']    = About::first();
+        $data['settings']  = Setting::where('active','=',1)->first();
+        $data['abouts']    = About::where('active','=',1)->first();
 
         return view('web.about.index',$data);
     }

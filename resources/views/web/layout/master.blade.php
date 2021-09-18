@@ -19,7 +19,6 @@
     <!-- ** Plugins Needed for the Project ** -->
     <!-- bootstrap -->
     <link rel="stylesheet" href="{{ asset('assets/web/plugins/bootstrap/bootstrap.min.css')}}">
-    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
     <!-- Slick Carousel -->
     <link rel="stylesheet" href="{{ asset('assets/web/plugins/slick/slick.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/web/plugins/slick/slick-theme.css')}}">
@@ -51,7 +50,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="top-left text-center text-md-left">
-                            <h6>We're delighted to offer the most hospitable welcome we can.</h6>
+                            <h6>{{$settings->welcome_txt}}</h6>
                         </div>
                     </div>
                     <div class="col-md-6">

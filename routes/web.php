@@ -1,12 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\web\HomeController;
-use App\Http\Controllers\web\AboutController;
-use App\Http\Controllers\web\ContactController;
-use App\Http\Controllers\web\GalleryController;
-use App\Http\Controllers\web\ServicesController;
-use App\Http\Controllers\web\AppointmentController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\web\{HomeController,AboutController,ContactController,
+    GalleryController,ServicesController,AppointmentController};
 
 Route::get('welcome', function () {
     return view('welcome');
@@ -14,7 +11,7 @@ Route::get('welcome', function () {
 
 //Admin Routes
 /****************************************************************************/
-
+Route::get("/dashboard",[DashboardController::class,"index"]);
 /****************************************************************************/
 
 //Web Routes

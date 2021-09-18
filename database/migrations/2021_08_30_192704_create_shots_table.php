@@ -17,8 +17,10 @@ class CreateShotsTable extends Migration
             $table->increments('id');
             $table->string('img', 100);
             $table->string('name', 100);
-            $table->string('description', 255);
-            $table->timestamps();
+            $table->string('titel', 255);
+            $table->boolean('active')->default(0);
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrentOnUpdate();
         });
     }
 

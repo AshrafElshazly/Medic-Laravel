@@ -18,7 +18,9 @@ class CreateWorkingHoursTable extends Migration
             $table->string('day', 3);
             $table->string('open', 7);
             $table->string('close', 7);
-            $table->timestamps();
+            $table->boolean('active')->default(0);
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrentOnUpdate();
         });
     }
 

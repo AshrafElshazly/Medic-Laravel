@@ -35,7 +35,7 @@
       <div class="col-lg-4 col-md-6">
         <div class="gallery-item">
           <img loading="lazy" src="{{asset('uploads/web/shots/'.$shot->img)}}" class="img-fluid" alt="gallery-image">
-          <a data-fancybox="images" href="images/gallery/gallery-01.jpg"></a>
+          <a data-fancybox="images" href="{{asset('uploads/web/shots/'.$shot->img)}}"></a>
           <h3>{{$shot->name}}</h3>
           <p>{{$shot->description}}</p>
         </div>
