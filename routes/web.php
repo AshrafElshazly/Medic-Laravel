@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\web\{HomeController,AboutController,ContactController,
-    GalleryController,ServicesController,AppointmentController};
+    GalleryController,ServicesController,AppointmentController, FeedbackController};
 
 Route::get('welcome', function () {
     return view('welcome');
@@ -30,4 +30,7 @@ Route::get("/appointment/getDoctors/{id}",[AppointmentController::class,"getDoct
 
 Route::get("/contact-us",[ContactController::class,"index"]);
 Route::post("/contact-us/store",[ContactController::class,"store"]);
+
+Route::get("/feedback",[FeedbackController::class,"index"]);
+Route::post("/feedback/store",[FeedbackController::class,"store"]);
 /****************************************************************************/

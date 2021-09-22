@@ -15,6 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="author" content="Themefisher">
     <meta name="generator" content="Themefisher Medical HTML Template v1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <!-- ** Plugins Needed for the Project ** -->
     <!-- bootstrap -->
@@ -38,7 +39,7 @@
 
     <!--Favicon-->
     <link rel="icon" href="{{ asset('assets/web/images/favicon.png')}}" type="image/x-icon">
-    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    @yield('style')
 </head>
 
 <body>
@@ -156,6 +157,9 @@
                     </li>
                     <li class="nav-item @@contact">
                         <a class="nav-link" href="{{ url('contact-us') }}">Contact</a>
+                    </li>
+                    <li class="nav-item @@contact">
+                        <a class="nav-link" href="{{ url('feedback') }}">FeedBack</a>
                     </li>
                 </ul>
             </div>

@@ -13,11 +13,12 @@ class CreateFeedBacksTable extends Migration
      */
     public function up()
     {
-        Schema::create('feed_backs', function (Blueprint $table) {
+        Schema::create('feedbacks', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 100);
             $table->string('img', 100);
-            $table->text('comment');
+            $table->string('email', 100);
+            $table->text('feedback');
             $table->boolean('active')->default(0);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrentOnUpdate();

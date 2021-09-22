@@ -19,16 +19,15 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-           'name'    => 'required|string|max:35',
-           'email'   => 'required|email|unique:messages',
-           'phone'   => 'required',
+           'name'    => 'required|string|max:100',
+           'email'   => 'required|email|max:100',
+           'phone'   => 'required|numeric|max:15',
            'message' => 'required|string'
        ]);
-
        Message::create([
-           'name' => $request->name,
-           'email' => $request->email,
-           'phone' => $request->phone,
+           'name'    => $request->name,
+           'email'   => $request->email,
+           'phone'   => $request->phone,
            'message' => $request->message,
        ])->save();
 

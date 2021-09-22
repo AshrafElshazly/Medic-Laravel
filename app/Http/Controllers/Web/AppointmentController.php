@@ -23,22 +23,22 @@ class AppointmentController extends Controller
     public function store(Request $request)
     {
       $request->validate([
-        'name'        => 'required|string|max:35',
-        'phone'       => 'required',
-        'email'       => 'required|email',
+        'name'        => 'required|string|max:100',
+        'phone'       => 'required|numeric|max:15',
+        'email'       => 'required|email|max:100',
         'date'        => 'required|date',
-        'doctor'      => 'required',
+        'doctor'      => 'required|string',
+        'department'  => 'required|string',
         'message'     => 'required|string'
       ]);
-
-    Appointment::create([
-        'name'      => $request->name,
-        'email'     => $request->email,
-        'phone'     => $request->phone,
-        'date'      => date('Y/m/d',strtotime($request->date)),
-        'doctor_id' => $request->doctor,
-        'message'   => $request->message,
-    ])->save();
+      Appointment::create([
+          'name'      => $request->name,
+          'email'     => $request->email,
+          'phone'     => $request->phone,
+          'date'      => date('Y/m/d',strtotime($request->date)),
+          'doctor_id' => $request->doctor,
+          'message'   => $request->message,
+      ])->save();
 
      return redirect()->back();
     }

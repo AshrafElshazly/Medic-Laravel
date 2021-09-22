@@ -27,7 +27,6 @@
           <div class="section-title">
             <h3>Request <span>Appointment</span></h3>
           </div>
-          {{-- ****************** Start Form AJAX ****************** --}}
           <form name="appointment" class="default-form contact-form" action="{{url('appointment/store')}}" method="POST">
             @csrf
             <div class="row">
@@ -82,7 +81,6 @@
               </div>
             </div>
           </form>
-          {{-- ****************** End Form AJAX ****************** --}}
         </div>
       </div>
       <div class="col-lg-6 mb-4 mb-lg-0 order-0 order-lg-1">

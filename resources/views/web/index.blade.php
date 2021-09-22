@@ -132,16 +132,16 @@
             <div class="col-lg-12">
                 <div class="testimonial-carousel">
                     <!--Slide Item-->
-                @foreach($feed_backs as $feed_back)
+                @foreach($feedbacks as $feedback)
                     <div class="slide-item">
                         <div class="inner-box text-center">
                             <div class="image-box">
                                 <figure>
-                                    <img loading="lazy" src="{{ asset('uploads/web/patients/'.$feed_back->img) }}" alt="">
+                                    <img loading="lazy" src="{{ asset('uploads/web/patients/'.$feedback->img) }}" alt="">
                                 </figure>
                             </div>
-                            <h6>{{$feed_back->name}}</h6>
-                            <p class="mb-0">{{$feed_back->comment}}</p>
+                            <h6>{{$feedback->name}}</h6>
+                            <p class="mb-0">{!!$feedback->feedback!!}</p>
                         </div>
                     </div>
                 @endforeach
