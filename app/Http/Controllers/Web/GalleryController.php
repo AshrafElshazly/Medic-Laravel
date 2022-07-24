@@ -9,9 +9,9 @@ use App\Http\Controllers\Controller;
 
 class GalleryController extends Controller
 {
-    public function index()
+    public function __invoke()
     {
-        $data['settings'] = Setting::where('active','=',1)->find(1);
+        $data['settings'] = Setting::first();
         $data['shots']    = Shot::where('active','=',1)->limit(6)->get();
 
         return view('web.gallery.index',$data);     

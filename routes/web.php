@@ -11,26 +11,26 @@ Route::get('welcome', function () {
 
 //Admin Routes
 /****************************************************************************/
-Route::get("/dashboard",[DashboardController::class,"index"]);
+Route::get("/dashboard",DashboardController::class);
 /****************************************************************************/
 
 //Web Routes
 /****************************************************************************/
-Route::get("/",[HomeController::class,"index"]);
+Route::get("/",HomeController::class);
 
-Route::get("/about-us",[AboutController::class,"index"]);
+Route::get("/about-us",AboutController::class);
 
-Route::get("/gallery",[GalleryController::class,"index"]);
+Route::get("/gallery",GalleryController::class);
 
-Route::get("/services",[ServicesController::class,"index"]);
+Route::get("/services",ServicesController::class);
 
-Route::get("/appointment",[AppointmentController::class,"index"]);
+Route::get("/appointment",AppointmentController::class);
 Route::post("/appointment/store",[AppointmentController::class,"store"]);
 Route::get("/appointment/getDoctors/{id}",[AppointmentController::class,"getDoctors"])->name("getDoctors");
 
-Route::get("/contact-us",[ContactController::class,"index"]);
+Route::get("/contact-us",ContactController::class);
 Route::post("/contact-us/store",[ContactController::class,"store"]);
 
-Route::get("/feedback",[FeedbackController::class,"index"]);
+Route::get("/feedback",FeedbackController::class);
 Route::post("/feedback/store",[FeedbackController::class,"store"]);
 /****************************************************************************/

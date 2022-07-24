@@ -6,31 +6,23 @@ use App\Models\Doctor;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AppointmentPostRequest;
 use App\Models\Appointment;
 use App\Models\Department;
 
 class AppointmentController extends Controller
 {
-    public function index()
+    public function __invoke()
     {
-      $data['settings']    = Setting::where('active','=',1)->first();
+      $data['settings']    = Setting::first();
       $data['doctors']     = Doctor::select('img','name','about')->where('active','=','1')->limit(3)->get();
       $data['departments'] = Department::select('id','name')->where('active','=','1')->get();
 
       return view('web.appointment.index',$data);
     }
 
-    public function store(Request $request)
+    public function store(AppointmentPostRequest $request)
     {
-      $request->validate([
-        'name'        => 'required|string|max:100',
-        'phone'       => 'required|numeric|max:15',
-        'email'       => 'required|email|max:100',
-        'date'        => 'required|date',
-        'doctor'      => 'required|string',
-        'department'  => 'required|string',
-        'message'     => 'required|string'
-      ]);
       Appointment::create([
           'name'      => $request->name,
           'email'     => $request->email,

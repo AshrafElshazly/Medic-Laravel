@@ -13,9 +13,9 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function __invoke()
     {
-        $data['settings']      = Setting::where('active','=',1)->first();
+        $data['settings']      = Setting::first();
         $data['slides']        = Slide::where('active','=',1)->limit(3)->get();
         $data['working_hours'] = WorkingHour::where('active','=',1)->limit(5)->get();
         $data['features']      = Feature::where('active','=',1)->limit(4)->get();

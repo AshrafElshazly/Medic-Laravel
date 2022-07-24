@@ -9,9 +9,9 @@ use App\Models\About;
 
 class AboutController extends Controller
 {
-    public function index()
+    public function __invoke()
     {
-        $data['settings']  = Setting::where('active','=',1)->first();
+        $data['settings']  = Setting::first();
         $data['abouts']    = About::where('active','=',1)->first();
 
         return view('web.about.index',$data);

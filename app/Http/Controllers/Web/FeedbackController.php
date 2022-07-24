@@ -6,25 +6,20 @@ use App\Models\Setting;
 use App\Models\Feedback;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\FeedbackPostRequest;
 use Illuminate\Support\Facades\Storage;
 
 class FeedbackController extends Controller
 {
-    function index()
+    function __invoke()
     {
-        $data['settings'] = Setting::where('active','=',1)->find(1);
+        $data['settings'] = Setting::first();
 
         return view('web.feedback.index',$data);
     }
 
-    function store(Request $request)
+    function store(FeedbackPostRequest $request)
     {
-        $request->validate([
-            'name'        => 'required|string|max:100',
-            'email'       => 'required|email|max:100',
-            'img'         => 'required|image|mimes:jpeg,png,jpg,gif,svg',
-            'feedback'    => 'required|string'
-        ]);
 
         $fileExtension = $request->img->getClientOriginalExtension();
         $fileName      = time().'.'.$fileExtension;
