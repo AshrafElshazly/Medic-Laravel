@@ -2,14 +2,8 @@
 
 namespace App\Http\Controllers\web;
 
-use App\Models\Doctor;
-use App\Models\Feature;
-use App\Models\Setting;
-use App\Models\Feedback;
-use App\Models\WorkingHour;
 use App\Http\Controllers\Controller;
-use App\Models\Slide;
-use Illuminate\Http\Request;
+use App\Models\{Setting, Doctor, Feature, Feedback, WorkingHour, Slide};
 
 class HomeController extends Controller
 {

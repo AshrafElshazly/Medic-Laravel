@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers\web;
 
-use App\Models\Service;
-use App\Models\Setting;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Models\{Setting, Service};
 class ServicesController extends Controller
 {
     public function __invoke()

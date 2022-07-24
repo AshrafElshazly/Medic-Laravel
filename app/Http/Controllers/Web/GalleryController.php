@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers\web;
 
-use App\Models\Shot;
-use App\Models\Setting;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\{Setting, Shot};
 
 class GalleryController extends Controller
 {

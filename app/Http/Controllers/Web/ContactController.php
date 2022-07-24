@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers\web;
 
-use App\Models\Setting;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactPostRequest;
-use App\Models\Message;
+use App\Models\{Setting, Message};
 
 class ContactController extends Controller
 {

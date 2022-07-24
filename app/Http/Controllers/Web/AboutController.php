@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers\web;
 
-use App\Models\Setting;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\About;
+use App\Models\{Setting, About};
 
 class AboutController extends Controller
 {

@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers\web;
 
-use App\Models\Doctor;
-use App\Models\Setting;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AppointmentPostRequest;
-use App\Models\Appointment;
-use App\Models\Department;
+use App\Models\{Doctor, Setting, Appointment, Department};
 
 class AppointmentController extends Controller
 {
