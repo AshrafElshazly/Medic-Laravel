@@ -20,7 +20,7 @@ class CreateFeaturesTable extends Migration
             $table->text('text');
             $table->boolean('active')->default(0);
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrentOnUpdate();
+            $table->timestamp('updated_at')->useCurrentOnUpdate()->nullable();
         });
     }
 

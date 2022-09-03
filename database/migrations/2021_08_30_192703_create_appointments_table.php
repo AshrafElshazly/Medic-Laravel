@@ -22,9 +22,7 @@ class CreateAppointmentsTable extends Migration
             $table->foreignId('doctor_id')->references('id')->on('doctors');
             $table->text('message');
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrentOnUpdate();
-
-            
+            $table->timestamp('updated_at')->useCurrentOnUpdate()->nullable();    
         });
     }
 

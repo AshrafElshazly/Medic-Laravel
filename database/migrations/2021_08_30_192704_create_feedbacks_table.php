@@ -21,7 +21,7 @@ class CreateFeedBacksTable extends Migration
             $table->text('feedback');
             $table->boolean('active')->default(0);
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrentOnUpdate();
+            $table->timestamp('updated_at')->useCurrentOnUpdate()->nullable();
         });
     }
 

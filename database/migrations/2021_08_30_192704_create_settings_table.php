@@ -28,7 +28,7 @@ class CreateSettingsTable extends Migration
             $table->text('github');
             $table->boolean('active')->default(0);
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrentOnUpdate();
+            $table->timestamp('updated_at')->useCurrentOnUpdate()->nullable();
         });
     }
 

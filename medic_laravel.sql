@@ -31,7 +31,7 @@ INSERT INTO `feedbacks` (`id`, `name`, `img`, `email`, `feedback`, `active`, `cr
 (4, 'Adam Rose', '1.png', 'test4@test4.com', 'Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet, consectetur, numquam Lorem ipsum dolor sit amet consectetur adipisicing elit.', 1, '2021-09-18 20:36:41', '2021-09-18 20:49:26'),
 (5, 'Amy Adams', '2.png', 'test5@test5.com', 'Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet, consectetur, numquam Lorem ipsum dolor sit amet consectetur adipisicing elit.', 1, '2021-09-18 20:36:41', '2021-09-18 20:49:28'),
 (6, 'David Warne', '3.png', 'test6@test6.com', 'Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet, consectetur, numquam Lorem ipsum dolor sit amet consectetur adipisicing elit.', 1, '2021-09-18 20:36:41', '2021-09-18 20:49:30'),
-(7, 'Ashraf Elshazly', 'ashraf.jpg', 'test@gmail.com', 'Shouda, I love you more than anything in my life &#10084; <br>\r\nI love you more than any phrase can describe &#10084; <br>\r\nI love you more than words &#10084; <br>\r\nI love you more than you can imagine &#10084; <br>', 1, '2021-09-21 19:22:43', '2021-09-21 22:11:35');
+(7, 'Ashraf Elshazly', 'ashraf.jpg', 'test@gmail.com', 'Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet, consectetur, numquam Lorem ipsum dolor sit amet consectetur adipisicing elit.', 1, '2021-09-21 19:22:43', '2021-09-21 22:11:35');
 -- TABEL 7
 INSERT INTO `services` (`id`, `img`, `name`, `title`, `description`, `active`, `created_at`, `updated_at`) VALUES
 (1, '1.jpg', 'Dormitory', 'Better Service At Low Cost', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, vero.', 1, '2021-09-18 22:36:41', '2021-09-18 22:42:07'),

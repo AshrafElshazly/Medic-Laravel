@@ -20,7 +20,7 @@ class CreateMessagesTable extends Migration
             $table->string('phone', 15);
             $table->text('message');
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrentOnUpdate();
+            $table->timestamp('updated_at')->useCurrentOnUpdate()->nullable();
         });
     }
 

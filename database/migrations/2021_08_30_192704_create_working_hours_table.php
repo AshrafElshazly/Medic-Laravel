@@ -20,7 +20,7 @@ class CreateWorkingHoursTable extends Migration
             $table->string('close', 7);
             $table->boolean('active')->default(0);
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrentOnUpdate();
+            $table->timestamp('updated_at')->useCurrentOnUpdate()->nullable();
         });
     }
 

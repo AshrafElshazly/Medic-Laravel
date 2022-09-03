@@ -21,7 +21,7 @@ class CreateDoctorsTable extends Migration
             $table->foreignId('department_id')->references('id')->on('departments');
             $table->boolean('active')->default(0);
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrentOnUpdate();
+            $table->timestamp('updated_at')->useCurrentOnUpdate()->nullable();
         });
     }
 
