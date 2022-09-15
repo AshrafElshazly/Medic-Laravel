@@ -155,6 +155,9 @@
                     <li class="nav-item @@appointment">
                         <a class="nav-link" href="{{ url('appointment') }}">Appointment</a>
                     </li>
+                    <li class="nav-item @@booking">
+                        <a class="nav-link" href="{{ url('booking') }}">Booking</a>
+                    </li>
                     <li class="nav-item @@contact">
                         <a class="nav-link" href="{{ url('contact-us') }}">Contact</a>
                     </li>

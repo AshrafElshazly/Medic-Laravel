@@ -25,7 +25,7 @@ class AppointmentPostRequest extends FormRequest
     {
         return [
             'name'        => 'required|string|max:100',
-            'phone'       => 'required|integer|digits:11',
+            'phone'       => 'required|numeric|digits:11',
             'email'       => 'required|email|max:100',
             'date'        => 'required|date',
             'doctor'      => 'required|string',
