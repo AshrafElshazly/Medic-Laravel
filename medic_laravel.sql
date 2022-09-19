@@ -50,9 +50,9 @@ INSERT INTO `shots` (`id`, `img`, `name`, `titel`, `active`, `created_at`, `upda
 (6, '6.jpg', 'Facility 06', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, in.', 1, '2021-09-18 22:36:41', '2021-09-18 22:41:25');
 -- TABEL 9
 INSERT INTO `slides` (`id`, `img`, `titel`, `description`, `btn_name`, `btn_url`, `active`, `created_at`, `updated_at`) VALUES
-(1, '1.jpg', 'Our Best Surgeons', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sunt animi sequi ratione quod at earum. <br> Quis quos officiis numquam!', 'explore', 'about-us', 1, '2021-09-18 23:07:24', '0000-00-00 00:00:00'),
+(1, '1.jpg', 'Our Best Surgeons', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sunt animi sequi ratione quod at earum. Quis quos officiis numquam!', 'explore', 'about-us', 1, '2021-09-18 23:07:24', '0000-00-00 00:00:00'),
 (2, '2.jpg', 'We Care About Your Health', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', 'about us', 'about-us', 1, '2021-09-18 23:07:24', '0000-00-00 00:00:00'),
-(3, '3.jpg', 'Best Medical Services', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae deserunt, <br>eius pariatur minus itaque nostrum.', 'appointment', 'appointment', 1, '2021-09-18 23:07:24', '2021-09-18 23:10:41');
+(3, '3.jpg', 'Best Medical Services', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae deserunt, eius pariatur minus itaque nostrum.', 'appointment', 'appointment', 1, '2021-09-18 23:07:24', '2021-09-18 23:10:41');
 -- TABEL 10
 INSERT INTO `working_hours` (`id`, `day`, `open`, `close`, `active`, `created_at`, `updated_at`) VALUES
 (1, 'Sun', '08:00Am', '08:00Pm', 1, '2021-09-18 22:36:41', '2021-09-18 22:39:48'),
