@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->increments('id');
+            $table->foreignId('appointment_id')->references('id')->on('appointments');
             $table->foreignId('doctor_id')->references('id')->on('doctors');
-            $table->string('patient_name',100);
             $table->dateTime('date');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrentOnUpdate()->nullable();
