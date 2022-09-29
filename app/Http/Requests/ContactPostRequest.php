@@ -26,7 +26,7 @@ class ContactPostRequest extends FormRequest
         return [
             'name'    => 'required|string|max:100',
             'email'   => 'required|email|max:100',
-            'phone'   => 'required|numeric|max:15',
+            'phone'   => 'required|numeric|digits:11',
             'message' => 'required|string'
         ];
     }
