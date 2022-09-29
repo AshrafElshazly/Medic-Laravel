@@ -164,6 +164,9 @@
                     <li class="nav-item @@contact">
                         <a class="nav-link" href="{{ url('feedback') }}">FeedBack</a>
                     </li>
+                    <li class="nav-item @@contact">
+                        <a class="nav-link" href="{{ url('news') }}">News</a>
+                    </li>
                 </ul>
             </div>
         </div>

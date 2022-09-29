@@ -8,7 +8,7 @@ use App\Models\{Setting, Message};
 
 class ContactController extends Controller
 {
-    public function __invoke()
+    public function index()
     {
         $data['settings'] = Setting::first();
 

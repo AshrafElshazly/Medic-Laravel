@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 
 class BookingController extends Controller
 {
-    public function __invoke()
+    public function index()
     {
         $data['settings']    = Setting::first();
         return view('web.booking.index',$data);

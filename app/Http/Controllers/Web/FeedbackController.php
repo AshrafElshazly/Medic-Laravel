@@ -8,7 +8,7 @@ use App\Models\{Setting, Feedback};
 
 class FeedbackController extends Controller
 {
-    function __invoke()
+    function index()
     {
         $data['settings'] = Setting::first();
 
