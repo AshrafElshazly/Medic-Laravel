@@ -8,7 +8,7 @@ use App\Models\{Doctor, Setting, Appointment, Department};
 
 class AppointmentController extends Controller
 {
-    public function __invoke()
+    public function index()
     {
       $data['settings']    = Setting::first();
       $data['doctors']     = Doctor::select('img','name','about')->where('active','=','1')->limit(3)->get();
