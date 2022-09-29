@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\web\{HomeController,AboutController,ContactController,
     GalleryController,ServicesController,AppointmentController, FeedbackController, BookingController, NewsController};
-use App\Models\News;
 
 Route::get('welcome', function () {
     return view('welcome');
