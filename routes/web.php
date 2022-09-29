@@ -40,8 +40,6 @@ Route::controller(ContactController::class)->prefix('contact-us')->group(functio
 
 Route::get('/booking',[BookingController::class,'index']);
 
-Route::get('/news',[NewsController::class,'index']);
-
 // Route::middleware([
 //     'auth:sanctum',
 //     config('jetstream.auth_session'),
