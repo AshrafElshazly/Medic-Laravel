@@ -14,7 +14,7 @@ class CreateWorkingHoursTable extends Migration
     public function up()
     {
         Schema::create('working_hours', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id('id');
             $table->string('day', 3);
             $table->string('open', 7);
             $table->string('close', 7);

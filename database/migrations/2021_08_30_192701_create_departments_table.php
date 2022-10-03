@@ -14,7 +14,7 @@ class CreateDepartmentsTable extends Migration
     public function up()
     {
         Schema::create('departments', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id('id');
             $table->string('name', 100);
             $table->boolean('active')->default(0);
             $table->timestamp('created_at')->useCurrent();
