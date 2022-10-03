@@ -13,7 +13,6 @@ class NewsController extends Controller
 
     function index(){
         $data['settings'] = Setting::first();
-        // return view('web.news.index',$data);
         return $this->apiResponse(200,'test',null,$data);
     }
 }
