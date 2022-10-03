@@ -10,7 +10,7 @@ Route::get('welcome', function () {
 });
 
 //Admin Routes
-Route::get('/dashboard',DashboardController::class);
+Route::get('/admin',DashboardController::class);
 
 //Web Routes
 Route::get('/',HomeController::class);
