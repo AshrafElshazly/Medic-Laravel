@@ -9,12 +9,17 @@ use App\Http\Controllers\web\{HomeController,AboutController,ContactController,
 
 //Admin Routes
 Route::prefix('admin')->name('admin.')->group(function () {
+
     Route::middleware(['auth'])->group(function () {
         Route::get('/',[DashboardController::class, 'index'])->name('dashboard');
     });
-    Route::get('/login',[AuthController::class,'index'])->name('loginPage');
-    Route::post('/login',[AuthController::class,'login'])->name('login');
-    Route::post('/logout',[AuthController::class,'logout'])->name('logout');
+
+    Route::controller(AuthController::class)->group(function () {
+        Route::get('/login','index')->name('loginPage');
+        Route::post('/login','login')->name('login');
+        Route::post('/logout','logout')->name('logout');    
+    });
+
 });
 
 
@@ -42,6 +47,5 @@ Route::controller(ContactController::class)->prefix('contact-us')->group(functio
     Route::get('/','index');
     Route::post('/store','store');
 });
-
 
 Route::get('/booking',[BookingController::class,'index']);
