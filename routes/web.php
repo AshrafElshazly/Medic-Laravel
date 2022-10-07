@@ -24,13 +24,13 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 
 //Web Routes
-Route::get('/',HomeController::class);
+Route::get('/',[HomeController::class,'index']);
 
-Route::get('/about-us',AboutController::class);
+Route::get('/about-us',[AboutController::class,'index']);
 
-Route::get('/gallery',GalleryController::class);
+Route::get('/gallery',[GalleryController::class,'index']);
 
-Route::get('/service',ServiceController::class);
+Route::get('/service',[ServiceController::class,'index']);
 
 Route::controller(FeedbackController::class)->prefix('feedback')->group(function () {
     Route::get('/','index');
