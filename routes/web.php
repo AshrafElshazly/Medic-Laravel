@@ -40,7 +40,7 @@ Route::controller(FeedbackController::class)->prefix('feedback')->group(function
 Route::controller(AppointmentController::class)->prefix('appointment')->group(function () {
     Route::get('/','index');
     Route::post('/store','store');
-    Route::get('/getDoctors/{id}','getDoctors')->name('getDoctors');
+    Route::get('/getDoctors/{id}','getDoctors');
 });
 
 Route::controller(ContactController::class)->prefix('contact-us')->group(function () {
