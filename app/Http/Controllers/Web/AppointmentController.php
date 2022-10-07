@@ -33,7 +33,7 @@ class AppointmentController extends Controller
 
     public function getDoctors($id)
     {
-      $doctors = Doctor::join('departments','department_id','=','departments.id')
+      $doctors = Doctor::with('department')
       ->select('doctors.id as doctor_id','doctors.name as doctor_name')
       ->where('department_id','=',$id)
       ->get();
