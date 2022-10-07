@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\{DashboardController,AuthController};
+use App\Http\Controllers\Admin\{AdminHomeController,AuthController};
 use App\Http\Controllers\web\{HomeController,AboutController,ContactController,
     GalleryController,ServicesController,AppointmentController, FeedbackController, BookingController};
 
@@ -11,7 +11,7 @@ use App\Http\Controllers\web\{HomeController,AboutController,ContactController,
 Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::middleware(['auth'])->group(function () {
-        Route::get('/',[DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/',[AdminHomeController::class, 'index'])->name('dashboard');
     });
 
     Route::controller(AuthController::class)->group(function () {
