@@ -1,16 +1,22 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\{DashboardController,AuthController};
 use App\Http\Controllers\web\{HomeController,AboutController,ContactController,
-    GalleryController,ServicesController,AppointmentController, FeedbackController, BookingController, NewsController};
+    GalleryController,ServicesController,AppointmentController, FeedbackController, BookingController};
 
-Route::get('welcome', function () {
-    return view('welcome');
-});
+
 
 //Admin Routes
-Route::get('/admin',DashboardController::class);
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::middleware(['auth'])->group(function () {
+        Route::get('/',[DashboardController::class, 'index'])->name('dashboard');
+    });
+    Route::get('/login',[AuthController::class,'index'])->name('loginPage');
+    Route::post('/login',[AuthController::class,'login'])->name('login');
+    Route::post('/logout',[AuthController::class,'logout'])->name('logout');
+});
+
 
 //Web Routes
 Route::get('/',HomeController::class);
@@ -39,11 +45,3 @@ Route::controller(ContactController::class)->prefix('contact-us')->group(functio
 
 
 Route::get('/booking',[BookingController::class,'index']);
-
-// Route::middleware([
-//     'auth:sanctum',
-//     config('jetstream.auth_session'),
-//     'verified'
-// ])->group(function () {
-//     Route::get('/dashboard', function () {return view('dashboard');})->name('dashboard');
-// });
