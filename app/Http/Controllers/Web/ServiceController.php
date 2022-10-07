@@ -3,14 +3,19 @@
 namespace App\Http\Controllers\web;
 
 use App\Http\Controllers\Controller;
-use App\Models\{Setting, Service};
+use App\Http\Interfaces\Web\ServiceInterface;
+
 class ServiceController extends Controller
 {
-    public function __invoke()
-    {
-        $data['settings'] = Setting::first();
-        $data['services'] = Service::where('active','=',1)->get();
+    public $serviceInterface;
 
-        return view('web.service.index',$data);     
+    public function __construct(ServiceInterface $serviceInterface)
+    {
+        $this->serviceInterface = $serviceInterface;
+    }
+    
+    public function index()
+    {
+        return $this->serviceInterface->index();
     }
 }

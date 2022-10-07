@@ -4,26 +4,25 @@ namespace App\Http\Controllers\web;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactPostRequest;
-use App\Models\{Setting, Message};
+use App\Http\Interfaces\Web\ContactInterface;
 
 class ContactController extends Controller
 {
+    public $contactInterface;
+
+    public function __construct(ContactInterface $contactInterface)
+    {
+        $this->contactInterface = $contactInterface; 
+    }
+    
     public function index()
     {
-        $data['settings'] = Setting::first();
-
-        return view('web.contact.index',$data);     
+        return $this->contactInterface->index();
     }
 
     public function store(ContactPostRequest $request)
     {
-       Message::create([
-           'name'    => $request->name,
-           'email'   => $request->email,
-           'phone'   => $request->phone,
-           'message' => $request->message,
-       ])->save();
+        return $this->contactInterface->store($request);
 
-        return redirect()->back();
     }
 }

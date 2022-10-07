@@ -3,15 +3,19 @@
 namespace App\Http\Controllers\web;
 
 use App\Http\Controllers\Controller;
-use App\Models\{Setting, About};
+use App\Http\Interfaces\Web\AboutInterface;
 
 class AboutController extends Controller
 {
-    public function __invoke()
-    {
-        $data['settings']  = Setting::first();
-        $data['abouts']    = About::where('active','=',1)->first();
+    public $aboutInterface;
 
-        return view('web.about.index',$data);
+    public function __construct(AboutInterface $aboutInterface)
+    {
+        $this->aboutInterface = $aboutInterface;
+    }
+
+    public function index()
+    {
+        return $this->aboutInterface->index();
     }
 }

@@ -3,15 +3,19 @@
 namespace App\Http\Controllers\web;
 
 use App\Http\Controllers\Controller;
-use App\Models\{Setting, Shot};
+use App\Http\Interfaces\Web\GalleryInterface;
 
 class GalleryController extends Controller
 {
-    public function __invoke()
-    {
-        $data['settings'] = Setting::first();
-        $data['shots']    = Shot::where('active','=',1)->limit(6)->get();
+    public $galleryInterface;
 
-        return view('web.gallery.index',$data);     
+    public function __construct(GalleryInterface $galleryInterface)
+    {
+        $this->galleryInterface = $galleryInterface;
+    }
+    
+    public function index()
+    {
+        return $this->galleryInterface->index();
     }
 }

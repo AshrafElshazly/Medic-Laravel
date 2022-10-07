@@ -4,32 +4,24 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\FeedbackPostRequest;
-use App\Models\{Setting, Feedback};
+use App\Http\Interfaces\Web\FeedbackInterface;
 
 class FeedbackController extends Controller
 {
+    public $feedbackInterface;
+
+    public function __construct(FeedbackInterface $feedbackInterface)
+    {
+        $this->feedbackInterface = $feedbackInterface;
+    }
+    
     function index()
     {
-        $data['settings'] = Setting::first();
-
-        return view('web.feedback.index',$data);
+        return $this->feedbackInterface->index();
     }
 
     function store(FeedbackPostRequest $request)
     {
-
-        $fileExtension = $request->img->getClientOriginalExtension();
-        $fileName      = time().'.'.$fileExtension;
-        $path = 'uploads/web/patients';
-        $request->img->move($path,$fileName);
-
-        Feedback::create([
-            'name'      => $request->name,
-            'email'     => $request->email,
-            'img'       => $fileName,
-            'feedback'  => $request->feedback,
-        ])->save();
-
-         return redirect()->back();
+        return $this->feedbackInterface->store($request);
     }
 }

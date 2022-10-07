@@ -5,9 +5,9 @@ namespace App\Http\Repositories\Admin;
 use App\Http\Interfaces\Admin\AuthInterface;
 use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\{Session, Auth};
 use RealRashid\SweetAlert\Facades\Alert;
+
 
 class AuthRepository implements AuthInterface
 {
