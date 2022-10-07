@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\{AdminHomeController,AuthController};
 use App\Http\Controllers\web\{HomeController,AboutController,ContactController,
-    GalleryController,ServicesController,AppointmentController, FeedbackController, BookingController};
+    GalleryController,ServiceController,AppointmentController, FeedbackController, BookingController};
 
 
 
@@ -30,7 +30,7 @@ Route::get('/about-us',AboutController::class);
 
 Route::get('/gallery',GalleryController::class);
 
-Route::get('/services',ServicesController::class);
+Route::get('/service',ServiceController::class);
 
 Route::controller(FeedbackController::class)->prefix('feedback')->group(function () {
     Route::get('/','index');

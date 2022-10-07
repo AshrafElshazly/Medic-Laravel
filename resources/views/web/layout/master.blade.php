@@ -147,7 +147,7 @@
                         <a class="nav-link" href="{{ url('about-us') }}">About</a>
                     </li>
                     <li class="nav-item @@service">
-                        <a class="nav-link" href="{{ url('services') }}">Service</a>
+                        <a class="nav-link" href="{{ url('service') }}">Service</a>
                     </li>
                     <li class="nav-item @@gallery">
                         <a class="nav-link" href="{{ url('gallery') }}">Gallery</a>

@@ -138,13 +138,13 @@
           <div class="item">
             <div class="inner-box">
               <div class="img_holder">
-                <a href="{{url('services')}}">
+                <a href="{{url('service')}}">
                   <img loading="lazy" src=" {{asset('uploads/web/services/'.$service->img)}}" alt="images" class="img-fluid">
                 </a>
               </div>
               <div class="image-content text-center">
                 <span>{{$service->text}}</span>
-                <a href="{{url('services')}}">
+                <a href="{{url('service')}}">
                   <h6>{{$service->name}}</h6>
                 </a>
                 <p>{{$service->description}}</p>
