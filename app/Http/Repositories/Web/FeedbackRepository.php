@@ -5,10 +5,12 @@ namespace App\Http\Repositories\Web;
 use App\Models\{Setting, Feedback};
 use App\Http\Requests\FeedbackPostRequest;
 use App\Http\Interfaces\Web\FeedbackInterface;
-
+use App\Http\Traits\ImgTrait;
 
 class FeedbackRepository implements FeedbackInterface
 {
+    use ImgTrait;
+
     function index()
     {
         $data['settings'] = Setting::first();
@@ -18,11 +20,7 @@ class FeedbackRepository implements FeedbackInterface
 
     function store(FeedbackPostRequest $request)
     {
-
-        $fileExtension = $request->img->getClientOriginalExtension();
-        $fileName      = time().'.'.$fileExtension;
-        $path = 'uploads/web/patients';
-        $request->img->move($path,$fileName);
+        $fileName = $this->SaveImg($request, 'uploads/web/patients');
 
         Feedback::create([
             'name'      => $request->name,
