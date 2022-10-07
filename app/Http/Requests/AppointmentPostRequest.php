@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Appointment;
 use Illuminate\Foundation\Http\FormRequest;
 
 class AppointmentPostRequest extends FormRequest
@@ -23,14 +24,6 @@ class AppointmentPostRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'name'        => 'required|string|max:100',
-            'phone'       => 'required|numeric|digits:11',
-            'email'       => 'required|email|max:100',
-            'date'        => 'required|date',
-            'doctor'      => 'required|string',
-            'department'  => 'required|string',
-            'message'     => 'required|string'
-        ];
+        return Appointment::rules();
     }
 }

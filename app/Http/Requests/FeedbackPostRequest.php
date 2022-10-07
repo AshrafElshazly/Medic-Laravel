@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Feedback;
 use Illuminate\Foundation\Http\FormRequest;
 
 class FeedbackPostRequest extends FormRequest
@@ -23,11 +24,6 @@ class FeedbackPostRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'name'        => 'required|string|max:100',
-            'email'       => 'required|email|max:100',
-            'img'         => 'required|image|mimes:jpeg,jpg',
-            'feedback'    => 'required|string'
-        ];
+        return Feedback::rules();
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Message;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ContactPostRequest extends FormRequest
@@ -23,11 +24,6 @@ class ContactPostRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'name'    => 'required|string|max:100',
-            'email'   => 'required|email|max:100',
-            'phone'   => 'required|numeric|digits:11',
-            'message' => 'required|string'
-        ];
+        return Message::rules();
     }
 }

@@ -81,4 +81,12 @@ class User extends Authenticatable implements JWTSubject
         return [];
     }
 
+    public static function rules()
+    {
+        return [
+            'email' => 'required',
+            'password' => 'required'
+        ];
+    }
+
 }
