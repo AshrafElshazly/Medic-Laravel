@@ -29,8 +29,6 @@
     <link rel="stylesheet" href="{{ asset('assets/admin/plugins/summernote/summernote-bs4.min.css') }}">
     <!--Favicon-->
     <link rel="icon" href="{{ asset('assets/admin/images/favicon.webp')}}" type="image/x-icon">
-    {{-- datatable --}}
-    <link rel="stylesheet" href="{{ asset('assets/admin/frontend/css/datatable.css')}}">
     @yield('style')
 </head>
 
@@ -393,9 +391,8 @@
     <script src="{{ asset('assets/admin/dist/js/demo.js') }}"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ asset('assets/admin/dist/js/pages/dashboard.js') }}"></script>
-    <script href="{{ asset('assets/admin/frontend/js/datatable.js')}}"></script>
     @include('sweetalert::alert')
-    @yield('script')
+    @stack('scripts')
 </body>
 
 </html>
