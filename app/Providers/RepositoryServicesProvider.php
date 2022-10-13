@@ -65,6 +65,11 @@ class RepositoryServicesProvider extends ServiceProvider
             'App\Http\Repositories\Web\ServiceRepository'
         );
         
+        //Api
+        $this->app->bind(
+            'App\Http\Interfaces\Api\AuthInterface',
+            'App\Http\Repositories\Api\AuthRepository'
+        );
     }
 
     /**
