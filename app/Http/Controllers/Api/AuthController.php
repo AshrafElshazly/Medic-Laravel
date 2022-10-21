@@ -26,4 +26,9 @@ class AuthController extends Controller
         return $this->authInterface->register($request);
     }
 
+    public function logout(Request $request)
+    {
+        return $this->authInterface->logout($request);
+    }
+
 }
