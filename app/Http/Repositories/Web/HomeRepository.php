@@ -15,7 +15,7 @@ use App\Http\Interfaces\Web\HomeInterface;
         $data['working_hours'] = WorkingHour::where('active','=',1)->limit(5)->get();
         $data['features']      = Feature::where('active','=',1)->limit(4)->get();
         $data['feedbacks']     = Feedback::where('active','=',1)->get();
-        $data['doctors']       = Doctor::select('img','name','about')->where('active','=',1)->limit(3)->get();
+        $data['doctors']       = Doctor::select('image','name','about')->where('active','=',1)->limit(3)->get();
         
         return view('web.index', $data);
     }

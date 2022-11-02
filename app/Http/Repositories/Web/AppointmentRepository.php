@@ -12,7 +12,7 @@ use App\Http\Interfaces\Web\AppointmentInterface;
     public function index()
     {
       $data['settings']    = Setting::first();
-      $data['doctors']     = Doctor::select('img','name','about')->where('active','=','1')->limit(3)->get();
+      $data['doctors']     = Doctor::select('image','name','about')->where('active','=','1')->limit(3)->get();
       $data['departments'] = Department::select('id','name')->where('active','=','1')->get();
 
       return view('web.appointment.index',$data);
