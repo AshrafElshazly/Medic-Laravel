@@ -63,7 +63,7 @@ class AuthRepository implements AuthInterface
 
     public function logout(Request $request)
     {
-        $token = $request->user()->token();
+        $token = $request->user('api')->token();
         $token->revoke();
         return $this->apiResponse(200, 'You have successfully logged out');
     }
