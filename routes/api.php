@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\AppointmentsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 
@@ -17,5 +18,9 @@ use App\Http\Controllers\Api\AuthController;
 Route::controller(AuthController::class)->group(function () {
     Route::post('login', 'login');
     Route::post('register', 'register');
-    Route::post('logout', 'logout')->middleware('auth:api');
+    Route::post('logout', 'logout')->middleware('apiAuth:api');
+});
+
+Route::middleware('apiAuth:api')->group(function () {
+    Route::get('appointments',[AppointmentsController::class,'appointments']);
 });
