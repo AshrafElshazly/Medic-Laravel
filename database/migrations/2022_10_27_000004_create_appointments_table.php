@@ -15,11 +15,9 @@ class CreateAppointmentsTable extends Migration
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->id('id');
-            $table->string('name', 100);
-            $table->string('email', 100);
-            $table->string('phone', 15);
             $table->date('date');
             $table->foreignId('doctor_id')->references('id')->on('doctors')->cascadeOnDelete();
+            $table->foreignId('client_id')->references('id')->on('clients')->cascadeOnDelete();
             $table->boolean('status')->default(0);
             $table->text('message');
             $table->timestamp('created_at')->useCurrent();

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateWorkingHoursTable extends Migration
+class CreateFeedBacksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateWorkingHoursTable extends Migration
      */
     public function up()
     {
-        Schema::create('working_hours', function (Blueprint $table) {
+        Schema::create('feedbacks', function (Blueprint $table) {
             $table->id('id');
-            $table->string('day', 3);
-            $table->string('open', 7);
-            $table->string('close', 7);
+            $table->text('feedback');
+            $table->foreignId('client_id')->references('id')->on('clients')->cascadeOnDelete();
             $table->boolean('active')->default(0);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrentOnUpdate()->nullable();
@@ -31,6 +30,6 @@ class CreateWorkingHoursTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('working_hours');
+        Schema::dropIfExists('feed_backs');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMessagesTable extends Migration
+class CreateSlidesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateMessagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('messages', function (Blueprint $table) {
+        Schema::create('slides', function (Blueprint $table) {
             $table->id('id');
-            $table->string('name', 100);
-            $table->string('email', 100);
-            $table->string('phone', 15);
-            $table->text('message');
+            $table->string('image');
+            $table->string('titel');
+            $table->string('description');
+            $table->string('btn_name');
+            $table->string('btn_url');
+            $table->boolean('active')->default(0);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrentOnUpdate()->nullable();
         });
@@ -31,6 +33,6 @@ class CreateMessagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('messages');
+        Schema::dropIfExists('slides');
     }
 }
